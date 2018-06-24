@@ -37,9 +37,9 @@ int main(int argc, char* argv[]){
     }
     clock_t _ETIME = clock();
 
-    cout << "elapse: " << (float)(_ETIME - _STIME)/CLOCKS_PER_SEC << endl;
-    cout << "pass  : " << pass << endl;
-    cout << "fail  : " << fail << endl;
-    cout << "total : " << pass + fail << endl;
-    cout << "  %   : " << (((float)pass/(pass + fail)) * 100) << endl;
+    cout << " elapse: " << (float)(_ETIME - _STIME)/CLOCKS_PER_SEC << " s" << endl;
+    cout << " pass  : " << pass << endl;
+    cout << " fail  : " << fail << endl;
+    cout << " total : " << pass + fail << endl;
+    cout << "   %   : " << (((float)pass/(pass + fail)) * 100) << endl;
 }

@@ -13,7 +13,6 @@ class Actor {
             : hp(100), dex(BASE_PLAYER_STAT), per(BASE_PLAYER_STAT), str(BASE_PLAYER_STAT), end(BASE_PLAYER_STAT), agi(BASE_PLAYER_STAT), cha(BASE_PLAYER_STAT), lck(BASE_PLAYER_STAT), spr(BASE_PLAYER_STAT), itl(BASE_PLAYER_STAT)
         {
             this->hp = 100;
-            cout << "Actor " << this->name << " created!" << endl;
         }
 
         Actor(string n)

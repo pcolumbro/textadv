@@ -13,11 +13,18 @@ class Item{
         {
 
         }
-        
+
     private:
         string name;
         string description;
         int level;
+}
+
+enum WEAPON_TYPE : string {
+    BLUNT,
+    SLASH,
+    PIERCE,
+    UNARMED
 }
 
 #endif
