@@ -1,6 +1,7 @@
-
 #ifndef GAME_H
 #define GAME_H
+
+#define arraysize(ar) ( sizeof(ar) / sizeof(ar[0]) )
 
 #include <iostream>
 #include "player.h"
@@ -12,21 +13,22 @@ class Game {
 
     public:
         Game(){
-            this->player = new Player();
             this->actorCounter = 1;
             this->turnCounter = 1;
             this->gameLength = 20;
+            this->mobs = new Actor[100];
         };
 
-        Game(string n){
+        Game(string n)
+            : Game()
+        {
             this->player = new Player(n);
-            this->actorCounter = 1;
-            this->turnCounter = 1;
-            this->gameLength = 20;
         }   
 
 
         Player* getPlayer();
+
+        Actor* addRandomMonster();
         
         void run();
 
@@ -38,6 +40,7 @@ class Game {
         bool runCheck(int max, int val);
 
     private:
+        Actor* mobs;
         Player* player;
         int turnCounter;
         int actorCounter;
@@ -87,5 +90,24 @@ void Game::runNpcTurn(){
 }
 
 
+Actor* Game::addRandomMonster(){
+    string name[] = {"angry", "strong", "scary", "sad", "mad", "crazy", "fierce"};
+    
+    Actor* a = new Actor();
+
+    a->dex = rand() % 10 + 1;
+    a->per = rand() % 10 + 1;
+    a->str = rand() % 10 + 1;
+    a->end = rand() % 10 + 1;
+    a->agi = rand() % 10 + 1;
+    a->cha = rand() % 10 + 1;
+    a->lck = rand() % 10 + 1;
+    a->spr = rand() % 10 + 1;
+    a->itl = rand() % 10 + 1;
+
+    a->name = name[(rand() % arraysize(name))] + " boi";
+
+    this->mobs[arraysize(mobs)] = *a;
+}
 
 #endif

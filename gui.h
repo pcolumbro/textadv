@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <string>
+#include 'game.h'
 
 using namespace std;
 
@@ -22,6 +23,8 @@ class Gui{
         void clearScreen();
         void displayActorStats(Actor* a);
 
+        void dumpMobs(Game* g);
+
         void displayText(string* arr, int n){
             for(int i = 0; i < n; i++)
                 cout << arr[i] << endl;
@@ -33,7 +36,7 @@ class Gui{
 
 void Gui::displayActorStats(Actor* a){
     cout << "---------------------------" << endl;
-    cout << "  Player Name  : " << a->name << endl;
+    cout << "  Actor Name   : " << a->name << endl;
     cout << "  health       : " << a->getHp() << endl;
     cout << "---------------------------" << endl;
     cout << "  dexterity    : " << a->dex << endl;
